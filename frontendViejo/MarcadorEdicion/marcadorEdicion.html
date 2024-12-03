@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador de Pádel - SetPoint</title>
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../cerrarSesion.css">
+    <link rel="stylesheet" href="marcadorEdicion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <script defer src="marcadorEdicion.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="../Logo/logo_b.png">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <a href="menuPrincipal.html"><img src="/Logo/logopalabra_b.png" alt="Logo SetPoint" id="logo"></a>
+        </div>
+        <nav class="navMedio">
+            <ul>
+                <li><button class="btn" id="inicio">Inicio</button></li>
+                <li><button class="btn" id="historial">Historial</button></li>
+                <li><button class="btn" id="sobreNosotros">Sobre Nosotros</button></li>
+            </ul>
+        </nav>
+        <nav class="navDer">
+            <ul>
+                <li><button class="btn" id="usuario">Usuario</button></li>
+                <li><button class="btn" id="cerrarSesion" onclick="abrirLogoutDialog()">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="edicion">
+            <section class="formulario">
+                <label>Descripción del campeonato</label>
+                <input type="text" value="Fecha Pares - Liga Salteña de Pádel - 2da">
+
+                <label>Nombres Pareja A</label>
+                <input type="text" value="JACQUES">
+                <input type="text" value="FERREIRA"> <br>
+
+                <label>Nombres Pareja B</label>
+                <input type="text" value="RODRÍGUEZ">
+                <input type="text" value="TANCA"> <br>
+
+                <input type="checkbox"> Punto de Oro 
+                <input type="checkbox"> Super Tie-Break <br>
+            </section>
+            <button>INICIAR MARCADOR</button>
+        </div>
+        <section class="marcadordiv">
+            <table class="marcador">
+                <tr>
+                    <td>Pareja A</td>
+                    <td>1º SET</td>
+                    <td>2º SET</td>
+                </tr>
+                <tr>
+                    <td>JACQUES / FERREIRA</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>40</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>RODRÍGUEZ / TANCA</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>0</td>
+                </tr>
+            </table>
+
+            <button>Alternar saque</button>
+            <button>Super Tie-Break</button>
+
+            <div>
+                <label>Llevar tiempo?</label>
+                <span>00:13</span>
+            </div>
+
+            <div>
+                <input type="text" value="Pin para compartir marcador en modo ver">
+                <button>Copiar</button>
+            </div>
+        </section>
+            <button>ABANDONAR MARCADOR</button>
+            <div id="logoutDialog" class="dialog" style="display:none;">
+                <div class="dialog-content">
+                    <p>¿Está seguro que desea cerrar sesión?</p><br>
+                    <button onclick="confirmarLogout()">Sí</button>
+                    <button onclick="cerrarLogoutDialog()">No</button>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+</body>
+</html>

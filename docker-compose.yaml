@@ -1,0 +1,62 @@
+name: SetPoint
+services:
+  frontend:
+    image: frontend
+    container_name: frontend
+    build:
+      context: ./frontend
+    command: sh -c "npm install && npm start"
+    volumes:
+      - ./frontend:/frontend # Bind mount apuntando a la carpeta frontend
+
+  backend:
+    image: backend:production
+    container_name: backend
+    build:
+      context: ./backend
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - PG_DATABASE=${PGDATABASE}
+      - PG_USER=${PGUSER}
+      - PG_PASSWORD=${PGPASSWORD}
+      - PG_HOST=${PGHOST}
+      - PG_PORT=${PGPORT}
+      - FRONT_URL=${FRONT_URL}
+      - GOOGLE_SECRET=${GOOGLE_SECRET}
+      - GOOGLE_ID=${GOOGLE_ID}
+      - USER=${user}
+      - PASS=${pass}
+
+    volumes:
+      - ./backend:/backend # Bind mount apuntando a la carpeta backend
+    depends_on:
+      - database
+
+  database:
+    image: database
+    container_name: database
+    build: ./db
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_DB=${PGDATABASE}
+
+  proxy:
+    image: nginx:latest
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf # Bind mount apuntando a carpetas proxy
+      - ./proxy/certs:/etc/nginx/certs
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - FRONT_URL=${FRONT_URL}
+    depends_on:
+      - frontend
+      - backend
+volumes:
+  db_data:

@@ -1,0 +1,165 @@
+/* Estilos base para pantallas móviles (mobile-first) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+main {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  background-color: #d0e9e3;
+  height: fit-content;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+form label {
+  color: #00897b;
+  margin-bottom: 5px;
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1em; /* Tamaño adaptado para móvil */
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #00897b;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 1.2rem;
+  padding-bottom: 12px;
+  padding-right: 5px;
+}
+
+.toggle-btn:focus {
+  outline: none;
+}
+
+.toggle-btn:hover {
+  color: #333;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #00897b;
+  color: white;
+  border: 2px solid;
+  border-color: #00897b;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1em; /* Tamaño adaptado para móvil */
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #00695c;
+  border: 2px solid #00695c;
+}
+
+.btn:active  {
+  background-color: #00897b;
+  color: #00695c;
+  border: 2px solid #00695c;
+}
+
+#error-message {
+  margin-top: 15px;
+  color: red;
+  font-size: 0.9em; /* Tamaño adaptado para móvil */
+  text-align: center;
+  font-family: "Black Ops One", sans-serif;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media (min-width: 600px) {
+  form {
+    padding: 25px;
+    max-width: 500px;
+  }
+
+  form label {
+    font-size: 1.2em;
+  }
+
+  form input {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    height: fit-content;
+  }
+
+  form {
+    padding: 30px;
+    max-width: 600px;
+  }
+
+  form label {
+    font-size: 1.5em;
+  }
+
+  form input {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    padding: 14px;
+    font-size: 1.2em;
+  }
+}

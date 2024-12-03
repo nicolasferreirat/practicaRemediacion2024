@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetPoint - Eliminar usuario</title>
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="eliminarUsuario.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Logo/logo_b.png">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <script defer src="eliminarUsuario.js"></script>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <a href="../MenuPrincipal/menuPrincipal.html"><img src="/Logo/logopalabra_b.png" alt="Logo SetPoint" id="logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>ELIMINAR USUARIO</h1>
+            <h2>¿Está seguro que desea eliminar este usuario?</h2>
+            <br>
+            <table id="listaUsuarios">
+                <thead>
+                    <tr>
+                        <th class="idcol">Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nombre de usuario</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se añadirán los datos de los usuarios dinámicamente -->
+                </tbody>
+            </table>    
+            <div class="botones">
+                <p class="errorBoton" id="errorBotonEliminar"></p>
+                <button class="si" id="si">SI</button>
+                <button class="no" id="no">NO</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+</body>
+</html>

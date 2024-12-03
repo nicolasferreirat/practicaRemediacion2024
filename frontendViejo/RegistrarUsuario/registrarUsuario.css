@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh; 
+    background-color: #d0e9e3; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    min-width: 200px;
+    max-width: 450px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Black Ops One', sans-serif;
+    color: #004d40;
+    font-weight: normal;
+}
+
+label, pre {
+    align-self: flex-start;
+    margin-top: 5px;
+    font-size: 18px;
+    font-family: 'Black Ops One', sans-serif;
+    color: #004d40;
+}
+
+#pelota {
+    width: 15px;
+    height: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#botonRegistro {
+    background-color: #00897b; 
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px; 
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-family: 'Black Ops One', sans-serif; 
+}
+
+#botonRegistro:hover {
+    background-color: white; 
+    color: #00695c; 
+    border: 2px solid #00695c; 
+}
+#botonRegistro:active {
+    background-color: #00897b; 
+    color: #00695c; 
+    border: 2px solid white; 
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.contenedor-password, .contenedor-reppassword {
+    position: relative;
+    display: flex;
+    width: 100%; 
+}
+
+#contraseña, #repetirContraseña {
+    width: 100%;
+    padding-right: 60px;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%); 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    text-align: center;
+}
+
+#requerimientosPassword {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 5px;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.errorBoton {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px; 
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.boton-menu {
+    background-color: #384858; 
+    color: white;
+    padding: 10px 25px;
+    font-size: 14px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-top: 10px;
+    flex: 1;
+    max-width: 48%;
+    max-height: 100%;
+    height: 50px;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.boton-menu:hover {
+    background-color: #00695c; 
+}
+
+.boton-menu:active {
+    background-color: #000000; 
+}
+
+#togglerepPassword img, #togglePassword img {
+    width: 24px; 
+}

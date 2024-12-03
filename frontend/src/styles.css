@@ -1,0 +1,21 @@
+#logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#logo-container img {
+  width: 195px;
+  height: 45px;
+  margin-right: 10px;
+  margin-bottom: 14px;
+  margin-top: 7px;
+}
+
+body {
+  background-color: #d0e9e3;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

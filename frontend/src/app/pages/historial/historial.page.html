@@ -1,0 +1,98 @@
+<main>
+  <!-- Botones para cambiar entre historial de partidos y americanos -->
+  <div class="botones-historial">
+    <button
+      (click)="cambiarHistorial('partidos')"
+      [class.active]="mostrarPartidos"
+    >
+      Ver historial de partidos
+    </button>
+    <button
+      (click)="cambiarHistorial('americanos')"
+      [class.active]="!mostrarPartidos"
+    >
+      Ver historial de americanos
+    </button>
+  </div>
+
+  <h2>
+    {{ mostrarPartidos?'Historial de Partidos':'Historial de Torneos Americanos'
+    }}
+  </h2>
+
+  <!-- Filtros -->
+  <div class="filtros">
+    <input
+      type="text"
+      placeholder="Buscar por club"
+      [(ngModel)]="filtros.club"
+      (ngModelChange)="cargarHistorialConFiltros()"
+    />
+    <input
+      type="text"
+      placeholder="Buscar por jugador"
+      [(ngModel)]="filtros.jugador"
+      (ngModelChange)="cargarHistorialConFiltros()"
+    />
+    <input
+      type="date"
+      [(ngModel)]="filtros.fechaInicio"
+      (ngModelChange)="cargarHistorialConFiltros()"
+    />
+    <input
+      type="date"
+      [(ngModel)]="filtros.fechaFin"
+      (ngModelChange)="cargarHistorialConFiltros()"
+    />
+    <input
+      type="text"
+      placeholder="Buscar por descripción de torneo"
+      [(ngModel)]="filtros.descripcionTorneo"
+      (ngModelChange)="cargarHistorialConFiltros()"
+    />
+  </div>
+
+  <!-- Paginación -->
+  <div class="paginacion">
+    <button
+      (click)="cargarHistorialConFiltros(currentPage - 1)"
+      [disabled]="currentPage === 1 || (mostrarPartidos ? totalPartidos : totalAmericanos) === 0"
+    >
+      Anterior
+    </button>
+    <span>Página {{ currentPage }}</span>
+    <button
+      (click)="cargarHistorialConFiltros(currentPage + 1)"
+      [disabled]="(currentPage * limit) >= (mostrarPartidos ? totalPartidos : totalAmericanos)"
+    >
+      Siguiente
+    </button>
+  </div>
+
+  <!-- Mostrar los partidos o torneos según la selección -->
+  <div *ngIf="mostrarPartidos">
+    <div *ngIf="partidos.length > 0; else noPartidos">
+      <div *ngFor="let item of partidos">
+        <app-historial [partido]="item"></app-historial>
+      </div>
+    </div>
+    <ng-template #noPartidos>
+      <div id="noPart">
+        <p id="noPartidos">No se encontraron partidos.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div *ngIf="!mostrarPartidos">
+    <div *ngIf="americanos.length > 0; else noTorneos">
+      <div *ngFor="let americano of americanos">
+        <app-historial-americano
+          [americano]="americano"
+        ></app-historial-americano>
+      </div>
+    </div>
+    <ng-template #noTorneos>
+      <p>No se encontraron torneos americanos.</p>
+    </ng-template>
+  </div>
+</main>

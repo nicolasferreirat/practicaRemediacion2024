@@ -1,0 +1,65 @@
+<main>
+    <form [formGroup]="editarForm" (ngSubmit)="onSubmit()">
+        <h2>Editar datos</h2>
+      
+        <label for="nombre">Nombre</label>
+        <input formControlName="nombre">
+        <p *ngIf="editarForm.get('nombre')?.hasError('required') && editarForm.get('nombre')?.touched">El campo 'Nombre' es obligatorio.</p>
+        <p *ngIf="editarForm.get('nombre')?.hasError('minlength') && editarForm.get('nombre')?.touched">El nombre es muy corto.</p>
+        <p *ngIf="editarForm.get('nombre')?.hasError('maxlength') && editarForm.get('nombre')?.touched">El nombre es muy largo.</p>
+      
+        <label for="apellido">Apellido</label>
+        <input formControlName="apellido">
+        <p *ngIf="editarForm.get('apellido')?.hasError('required') && editarForm.get('apellido')?.touched">El campo 'Apellido' es obligatorio.</p>
+        <p *ngIf="editarForm.get('apellido')?.hasError('minlength') && editarForm.get('apellido')?.touched">El apellido es muy corto.</p>
+        <p *ngIf="editarForm.get('apellido')?.hasError('maxlength') && editarForm.get('apellido')?.touched">El apellido es muy largo.</p>
+      
+        <label for="nombre_usuario">Nombre de usuario</label>
+        <input formControlName="nombre_usuario">
+        <p *ngIf="editarForm.get('nombre_usuario')?.hasError('required') && editarForm.get('nombre_usuario')?.touched">El campo 'Nombre de usuario' es obligatorio.</p>
+        <p *ngIf="editarForm.get('nombre_usuario')?.hasError('minlength') && editarForm.get('nombre_usuario')?.touched">El nombre de usuario es muy corto.</p>
+        <p *ngIf="editarForm.get('nombre_usuario')?.hasError('maxlength') && editarForm.get('nombre_usuario')?.touched">El nombre de usuario es muy largo.</p>
+        <p *ngIf="editarForm.get('nombre_usuario')?.hasError('nombreExistente')">Este nombre de usuario ya está registrado.</p>
+      
+        <label for="mail">Correo electrónico</label>
+        <input formControlName="mail">
+        <p *ngIf="editarForm.get('mail')?.hasError('required') && editarForm.get('mail')?.touched">El campo 'Correo electrónico' es obligatorio.</p>
+        <p *ngIf="editarForm.get('mail')?.hasError('email') && editarForm.get('mail')?.touched">Correo electrónico inválido.</p>
+        <p *ngIf="editarForm.get('mail')?.hasError('correoExistente')">Este correo electrónico ya está registrado.</p>
+
+        <label for="foto">Imagen</label>
+        <button 
+        *ngIf="!botonDesactivado" 
+        type="button" 
+        (click)="mostrarOpciones()">
+        Haz click aquí
+        </button>
+        
+        <div *ngIf="mostrarMenuOpciones && !botonDesactivado" class="menu-opciones">
+          <button type="button" class="menu-button" (click)="sacarFoto()">Sacar Foto</button>
+          <label for="fileInput" class="menu-button">
+              <span>Seleccionar Foto</span>
+              <input 
+                  id="fileInput" 
+                  type="file" 
+                  accept=".jpg" 
+                  (change)="imagenCapturada($event)" 
+                  hidden>
+          </label>
+        </div>
+
+        <img *ngIf="prevFoto" width="200px" [src]="'data:image/jpeg;base64,' + foto" alt="Foto capturada">
+        <img *ngIf="prevImagen && !prevFoto" width="200px" [src]="prevImagen" alt="Imagen seleccionada">
+      
+        <button type="submit">Confirmar</button>
+        <button [routerLink]="['/verUsuario']">Volver al menu</button>
+        <div class="error">
+            <br><p *ngIf="errorBotonRegistro === 'Se han actualizado los datos correctamente'" class="mensaje-exito">
+                {{ errorBotonRegistro }}
+              </p>
+              <p *ngIf="errorBotonRegistro !== 'Se han actualizado los datos correctamente'">
+                {{ errorBotonRegistro }}
+              </p>
+        </div>
+    </form>
+</main>

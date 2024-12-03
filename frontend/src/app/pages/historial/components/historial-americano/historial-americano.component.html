@@ -1,0 +1,57 @@
+<div class="americano-container" *ngIf="americano">
+  <div class="americano-card">
+    <h3>{{ americano.descripcion_torneo || "Torneo sin descripción" }}</h3>
+    <p>
+      <strong>Fecha:</strong>
+      {{ americano.fecha_registro | date : "dd/MM/yyyy, h:mm a" }}
+    </p>
+
+    <div class="jugadores">
+      <h4>Jugadores:</h4>
+      <ul>
+        <li>{{ americano.jugador1 }}</li>
+        <li>{{ americano.jugador2 }}</li>
+        <li>{{ americano.jugador3 }}</li>
+        <li>{{ americano.jugador4 }}</li>
+        <li>{{ americano.jugador5 }}</li>
+        <li>{{ americano.jugador6 }}</li>
+        <li>{{ americano.jugador7 }}</li>
+        <li>{{ americano.jugador8 }}</li>
+      </ul>
+    </div>
+
+    <div class="puntos">
+      <h4>Primeros 3 Jugadores con sus puntos:</h4>
+      <table class="puntos-tabla">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Jugador</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>{{ americano.puesto1 }}</td>
+            <td>{{ americano.puntos1 }}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{ americano.puesto2 }}</td>
+            <td>{{ americano.puntos2 }}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>{{ americano.puesto3 }}</td>
+            <td>{{ americano.puntos3 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTorneos>
+  <p>No se encontraron torneos americanos.</p>
+</ng-template>

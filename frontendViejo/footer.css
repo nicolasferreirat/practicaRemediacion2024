@@ -1,0 +1,16 @@
+.footer {
+    background-color: #8edbc9; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    font-family: 'Black Ops One', sans-serif; 
+    font-size: 1em; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+}
+
+.footer p {
+    font-family: 'Black Ops One', sans-serif; 
+    font-size: 1em; 
+}

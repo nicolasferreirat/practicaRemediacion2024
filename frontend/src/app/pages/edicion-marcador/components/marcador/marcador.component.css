@@ -1,0 +1,423 @@
+main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;  
+  padding: 20px;
+  background-color: #d0e9e3; 
+}
+
+app-marcador-edicion {
+  width: 800px;
+  font-size: x-large;
+}
+
+.marcador {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.marcador table text{
+  font-size: 3em;
+}
+
+table {
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 10px;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  border: 0px solid #DDD;
+  background-color: #c2ebc8;
+}
+
+table th {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1.5em;
+  width: 3em;
+  font-weight: normal;
+  text-align: center;
+}
+
+#descripcion{
+  background-color: #0f643a;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 8px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.jugadoresA {
+  color: #0f643a;
+  font-size: 2em;
+  border-radius: 0px;
+}
+
+.jugadoresB {
+  color: #0f643a;
+  font-size: 2em;
+  border-radius: 0px 0px 0px 15px;
+}
+
+/* Estilos para los campos editables */
+.editable-field {
+  border: none;
+  background: none;
+  font-size: 1em;
+  color: #0f643a;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+}
+
+.editable-field:focus {
+  outline: 2px solid #76c7c0; /* Añade un borde visible al hacer foco */
+  background-color: #e8f5e9;  /* Cambia el color de fondo para indicar edición */
+}
+
+.descripcion {
+  background-color: #0f643a;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.jugadoresA input, .jugadoresB input {
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.jugadoresA input::placeholder,
+.jugadoresB input::placeholder {
+  color: #aaa;
+}
+
+table .saque {
+  color: rgb(134, 194, 16);
+}
+
+table .botones {
+  width: 180px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.puntosA {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
+  border-radius: 0px 15px 0px 0px;
+}
+
+.puntosB {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
+  border-radius: 0px 0px 15px 0px;
+}
+
+.puntosA.sumado, .puntosB.sumado{
+  color: #28a745; 
+}
+
+.puntosA.restado, .puntosB.restado{
+  color: #be1414; 
+}
+
+.puntosA.oro, .puntosB.oro {
+  color: goldenrod;
+}
+
+.games {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.games.sumado {
+  color: #28a745; 
+}
+
+.games.restado {
+  color: #be1414; 
+}
+
+.game{
+  width: 100px;
+  background-color: #ffffff;
+  border: 0px solid #ffffff;
+}
+
+.saqueA, .saqueB {
+  font-size: 18px;
+  color: #76C7C0;
+}
+
+.contador {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px 30px;
+  text-align: center;
+  margin: 20px 0;
+  color: #333333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contador h2 {
+  font-size: 24px;
+  color: #0f643a;
+  margin-bottom: 10px;
+}
+
+.contador p {
+  font-size: 36px;
+  font-weight: bold;
+  color: #0f643a;
+  letter-spacing: 2px;
+}
+
+.contador p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.botonesMarcador {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+button {
+  font-size: 14px;
+  padding: 6px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #DDDDDD;
+}
+
+button:active {
+  background-color: #CCCCCC;
+}
+
+button.finalizar {
+  background-color: #FF4D4D;
+  color: #ffffff;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+button.finalizar:hover {
+  background-color: #FF3333;
+}
+
+button.finalizar:active {
+  background-color: #CC0000;
+}
+
+button.botonmarcador {
+  background-color: #FFA000;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+button.botonmarcador:hover, button.boton-nuevomarcador {
+  background-color: #FF8C00;
+}
+
+button.botonmarcador:active, button.boton-nuevomarcador {
+  background-color: #FF7000;
+}
+
+button.boton-nuevomarcador {
+  background-color: #ff5e00;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  align-items: flex-end;
+}
+
+
+td {
+  font-size: 12px;
+  color: #333333;
+}
+
+table td:first-child {
+  font-weight: bold;
+  text-align: left;
+}
+
+table td:last-child, .sets {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+/* Estilo para los pines */
+.pines {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.pines h5 {
+  color: #0f643a;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.pinedi, .pincomp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.pines input {
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #0f643a;
+  border-radius: 8px;
+  background-color: #f0f9f6;
+  color: #333333;
+  width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones de compartir y copiar */
+.pines button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #0f643a;
+  transition: background-color 0.3s ease;
+}
+
+.pines button:hover {
+  background-color: #0c5230;
+}
+
+.compartir {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+}
+
+.finalizar {
+  background-color: #f22525;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.finalizar:hover {
+  background-color: #e70202;
+}
+
+/* Estilos adicionales */
+span {
+  display: inline-block;
+  min-width: 30px; /* Para alinear los dígitos */
+  text-align: center;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  main {
+    padding: 10px;
+    height: fit-content;
+  }
+
+  .marcador {
+    padding: 10px;
+    max-width: 100%;
+    font-size: 0.8em; 
+  }
+
+  .marcador table {
+    font-size: 0.9em; 
+  }
+
+  table th,
+  table td {
+    padding: 5px; 
+    font-size: 14px;
+  }
+
+  h3,
+  h4 {
+    font-size: 16px; 
+  }
+
+  .jugadoresA, .jugadoresB {
+    font-size: 1.5em;
+  }
+
+  .puntosA,
+  .puntosB {
+    font-size: 20px;
+  }
+
+  .pines {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 12px; 
+    padding: 5px 8px;
+  }
+
+  button.finalizar {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  button.botonmarcador {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .pines {
+    margin-bottom: 10px;
+  }
+}

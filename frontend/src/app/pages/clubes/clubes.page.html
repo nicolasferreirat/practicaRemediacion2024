@@ -1,0 +1,32 @@
+<div class="clubes-container">
+  <h1>Lista de Clubes</h1>
+
+  <div *ngIf="clubes.length > 0; else noClubes">
+    <div *ngFor="let club of clubes" class="club-card">
+      <div class="logo">
+        <img [src]="club.logo" alt="Logo del club" />
+      </div>
+      
+      <div class="text-content">
+        <h2>{{ club.nombre_club }}</h2>        
+        <div class="extra-info">
+          <p><strong>Dirección:</strong> {{ club.direccion }}</p>
+          <p><strong>Cantidad de Canchas:</strong> {{ club.cant_pistas }}</p>
+          <p><strong>Contacto:</strong>{{ club.contacto }}</p>
+        </div>
+      </div>
+
+      <div class="foto">
+        <img [src]="club.foto" alt="Foto del club" />
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noClubes>
+    <p>No hay clubes disponibles para mostrar.</p>
+  </ng-template>
+
+  <div class="menu-button-container">
+    <button class="menu-button" [routerLink]="['/menuPrincipal']">Ir al Menú Principal</button>
+  </div>
+</div>

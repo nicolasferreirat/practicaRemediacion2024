@@ -1,0 +1,141 @@
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Black Ops One", sans-serif;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #00897b;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  z-index: 1002;
+}
+
+/* Logo */
+#logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrado en pantallas pequeñas */
+  margin-bottom: 10px;
+}
+
+#logo-container img {
+  width: 150px; /* Tamaño reducido para móviles */
+  height: auto;
+}
+
+/* Botones principales */
+.main-container button {
+  background-color: #00695c;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1em;
+  font-family: 'Black Ops One', sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+}
+
+.main-container button:hover {
+  background-color: white;
+  color: #00695c;
+  border: 2px solid white;
+}
+
+.main-container button:active {
+  background-color: #00897b;
+  color: #00695c;
+}
+
+/* Contenedor de botones en pantallas pequeñas */
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#usuario {
+  font-size: 0.9em;
+  font-family: 'Black Ops One', sans-serif;
+}
+
+.user-image {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media (min-width: 600px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  #logo-container {
+    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .botones {
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
+  }
+
+  #logo-container img {
+    width: 180px;
+  }
+
+  .main-container button {
+    font-size: 1.1em;
+    padding: 10px 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  #logo-container img {
+    width: 195px;
+    height: 45px;
+  }
+
+  .main-container button {
+    font-size: 1.2em;
+    max-width: 700px;
+  }
+
+  #usuario {
+    font-size: 1em;
+  }
+}

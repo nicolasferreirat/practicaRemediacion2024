@@ -1,0 +1,31 @@
+<main>
+  <section class="pin-section">
+    <div class="pin-input">
+      <label for="pin">Ingrese PIN COMPARTIR de Marcador</label>
+      <input type="text" id="pin" name="pin" [(ngModel)]="this.pinCompartir" />
+      <button class="ingresar-boton" (click)="verMarcador()">INGRESAR</button>
+    </div>
+
+    <div class="separador"></div>
+
+    <div class="pin-input">
+      <label for="pin">Ingresar PIN EDITAR de Marcador</label>
+      <input type="text" id="pin" name="pin" [(ngModel)]="this.pinEditar" />
+      <button class="ingresar-boton" (click)="editarMarcador()">
+        INGRESAR
+      </button>
+    </div>
+
+    <div class="separador"></div>
+
+    <div class="crear-boton">
+      <button (click)="crearMarcador()">CREAR MARCADOR</button>
+    </div>
+
+    <div class="separador"></div>
+
+    <div class="crear-boton">
+      <button (click)="crearTorneo()">CREAR TORNEO AMERICANO</button>
+    </div>
+  </section>
+</main>

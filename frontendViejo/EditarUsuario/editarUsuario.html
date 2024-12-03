@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SetPoint - Registrar Usuario</title>
+        <link rel="stylesheet" href="../header.css">
+        <link rel="stylesheet" href="../footer.css">
+        <link rel="stylesheet" href="editarUsuario.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Logo/logo_b.png">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <script defer src="editarUsuario.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="../MenuPrincipal/menuPrincipal.html"><img src="/Logo/logopalabra_b.png" alt="Logo SetPoint" id="logo"></a>
+            </div>
+            <nav>
+                <button class="btn" id="sobreNosotros">Sobre Nosotros</button>
+            </nav>
+        </header>
+        <main>
+            <form id="registrarUsuario">
+                <h2>Editar datos</h2>
+
+                <label for="nombre"><pre><img id="pelota" src="../Logo/logopelota_n.png" sizes="32x32"> Nombre</pre></label>
+                <input type="text" id="nombre" name="nombre" required>
+                <p class="error" id="errorNombre"></p>
+
+                <label for="apellido"><pre><img id="pelota" src="../Logo/logopelota_n.png" sizes="32x32"> Apellido</pre></label>
+                <input type="text" id="apellido" name="apellido" required>
+                <p class="error" id="errorApellido"></p>
+
+                <label for="user"><pre><img id="pelota" src="../Logo/logopelota_n.png" sizes="32x32"> Nombre de usuario</pre></label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+                <p class="error" id="errorNombreUsuario"></p>
+
+                <label for="mail"><pre><img id="pelota" src="../Logo/logopelota_n.png" sizes="32x32"> Correo electrónico</pre></label>
+                <input type="text" id="mail" name="mail" required>
+                <p class="error" id="errorMail"></p>
+
+                <button type="button"id="botonRegistro">Confirmar</button>
+                <p class="errorBoton" id="errorBotonRegistro"></p>
+                
+                <button type="button" id="menu" class="boton-menu">Volver al Menú</button>
+                
+            </form>
+        </main>
+        <footer class="footer">
+            <p>Todos los derechos reservados &copy; 2024</p>
+        </footer>
+    </body>
+</html>

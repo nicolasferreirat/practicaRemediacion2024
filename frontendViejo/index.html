@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SetPoint</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="Logo/logo_b.png">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <a href="index.html"><img src="/Logo/logopalabra_b.png" alt="Logo SetPoint" id="logo"></a>
+        </div>
+        <nav>
+            <button class="btn" id="sobreNosotros">Sobre Nosotros</button>
+        </nav>
+    </header>
+
+    <main>
+        <form id="loginForm">
+            <label for="mail">Email o nombre de usuario</label>
+            <input type="text" id="mailUsuario" placeholder="Ingrese su correo o nombre de usuario">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password">
+            <p id="error-message" style="color: red; display: none;"></p> <br>
+            <button class="btn" type="submit">Ingresar</button>
+            <button class="btn" id="reg" onclick="window.location.href='RegistrarUsuario/registrarUsuario.html'">Registrarse</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #A2A2A2;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #1A1A1A;
+    margin-bottom: 8px;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+#desc {
+    width: 100%;
+    text-align: center;
+}
+
+form input[type="text"], 
+form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+
+form input::placeholder {
+    color: #AAAAAA;
+    text-align: center;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    border-color: #00A5FF;
+}
+
+form button[type="submit"] {
+    background-color: #00CC66;
+    color: #ffffff;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+form button[type="submit"]:hover {
+background-color: #00994C;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+p {
+color: #FF4D4D;
+font-size: 18px;
+margin-top: 10px;
+text-align: center;
+}

@@ -1,0 +1,33 @@
+<form [formGroup]="marcadorForm" (ngSubmit)="iniciarMarcador()">
+    <h3>Descripción del Campeonato</h3>
+    <input id="desc" formControlName="descripcion_competencia" placeholder="Fecha, Liga, etc.">
+    <br>
+    <br>
+    <h4>Nombres Pareja A</h4>
+    <input formControlName="nombre_pareja_A1" id="jugador1" placeholder="Jugador 1">
+    <input formControlName="nombre_pareja_A2" id="jugador2" placeholder="Jugador 2">
+    <br>
+    <br>
+    <h4>Nombres Pareja B</h4>
+    <input formControlName="nombre_pareja_B1" id="jugador3" placeholder="Jugador 3">
+    <input formControlName="nombre_pareja_B2" id="jugador4" placeholder="Jugador 4">
+    <br>
+    <br>
+    <h4>Club</h4>
+    <select formControlName="id_club">
+      <option *ngFor="let club of clubes" [value]="club.id_club">{{ club.nombre_club }}</option>
+    </select>
+  
+    <label>
+      <input type="checkbox" formControlName="ventaja"> Ventaja (Adv.)
+    </label>
+    <label>
+      <input type="checkbox" formControlName="es_supertiebreak"> Super Tie-Break
+    </label>
+    <label>
+      <input type="checkbox" formControlName="set_largo"> Set largo
+    </label>
+  
+    <button type="submit">Iniciar Marcador</button>
+    <p>{{this.errorInicio}}</p>
+</form>

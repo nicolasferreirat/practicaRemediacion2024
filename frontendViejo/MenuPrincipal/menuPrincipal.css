@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.navMedio {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navMedio ul {
+    display: flex;
+}
+
+.navDer {
+    margin-left: auto;
+}
+
+.navDer ul {
+    display: flex;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 131px); 
+    background-color: #d0e9e3; 
+}
+
+.pin-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65vh;
+    margin: 0 auto;
+}
+
+.pin-input {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pin-input label {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: block;
+    color: #004d40;
+}
+
+.pin-input input {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #004d40;
+    width: 65%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ingresar-button {
+    background-color: #00695c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-family: 'Black Ops One', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ingresar-button:hover {
+    background-color: #004d40;
+}
+
+.separator {
+    width: 2px;
+    height: 100px;
+    background-color: #004d40;
+    margin: 0 20px;
+}
+
+.create-button button {
+    background-color: #00695c;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Black Ops One', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-button button:hover {
+    background-color: #004d40;
+}
+
+nav.navigation {
+    position: fixed; 
+    top: 0;
+    left: -100%; 
+    width: 250px;
+    height: 100vh;
+    background-color: #00695c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    transition: left 0.3s ease; 
+    z-index: 1001; 
+}
+
+nav.navigation.active {
+    left: 0; 
+}
+
+nav.navigation ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+nav.navigation ul li {
+    margin: 15px 0;
+}
+
+nav.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 10px;
+    left: 20px; 
+    display: none; 
+    z-index: 1003;
+}
+
+.footer {
+    background-color: #bfded7; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    font-family: 'Black Ops One', sans-serif; 
+    font-size: 1em; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0; 
+}
+
+.footer p {
+    font-family: 'Black Ops One', sans-serif; 
+    font-size: 1em; 
+}
+
+@media (max-width: 1300px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    .navigation ul {
+        flex-direction: column;
+    }
+
+    .navMedio, .navDer {
+        display: none;
+    }
+
+    
+    .pin-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .separator {
+        display: none; 
+    }
+
+    .pin-input, .create-button {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .create-button button, .ingresar-button {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-height: 480px) {
+    nav.navigation ul li button {
+        font-size: 1.0em; 
+        padding: 5px 10px; 
+    }
+
+    nav.navigation ul li {
+        margin: 3px 0; 
+    }
+    
+    .pin-input input {
+        font-size: 1em; 
+        padding: 8px; 
+    }
+}
+
+@media (max-height: 300px) {
+    nav.navigation ul li button {
+        font-size: 0.7em; 
+        padding: 5px 10px; 
+    }
+
+    nav.navigation ul li {
+        margin: 3px 0; 
+    }
+    
+    .pin-input input {
+        font-size: 1em; 
+        padding: 8px; 
+    }
+}

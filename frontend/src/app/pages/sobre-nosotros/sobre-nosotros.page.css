@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Merriweather:wght@300;400;700&display=swap');
+
+/* Estilos base para pantallas móviles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #d0e9e3;
+    height: fit-content;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#titulo {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #004d40;
+    text-align: center;
+    max-width: 100%;
+    margin: 20px 0;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.cuerpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #0c6657;
+    margin: 15px 0;
+    font-family: 'Black Ops One', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    padding: 0 10px;
+    font-family: 'Merriweather', serif;
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 600px) {
+    #titulo {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 900px) {
+    main {
+        max-width: 800px;
+        padding: 30px;
+        margin: 0 auto;
+    }
+
+    #titulo {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        padding: 0 30px;
+        max-width: 700px;
+    }
+}

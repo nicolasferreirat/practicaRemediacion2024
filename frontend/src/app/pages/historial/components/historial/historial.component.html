@@ -1,0 +1,45 @@
+<div class="marcador-container">
+    <div class="marcador-card">
+      <h3>{{ partido.descripcion_competencia || 'Partido sin descripción' }}</h3>
+      <p>Fecha: {{ partido.fecha_creacion | date:'dd/MM/yyyy, h:mm a' }}</p>
+      <p>Duracion: {{ partido.duracion_partido }}</p>
+      <p>Club: {{ partido.nombre_club }}</p>
+      <div class="jugadores">
+        <p>
+          <strong>Pareja A:</strong> {{ partido.nombre_pareja_a1 }} y
+          {{ partido.nombre_pareja_a2 }}
+        </p>
+        <p>
+          <strong>Pareja B:</strong> {{ partido.nombre_pareja_b1 }} y
+          {{ partido.nombre_pareja_b2 }}
+        </p>
+      </div>
+
+      <table class="marcador-tabla">
+        <thead>
+          <tr>
+            <th></th>
+            <th>1° Set</th>
+            <th>2° Set</th>
+            <th>3° Set</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td *ngFor="let set of sets">{{ set.games_parejaa || "N/A" }}</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td *ngFor="let set of sets">{{ set.games_parejab || "N/A" }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="detalles-adicionales">
+        <p>Ventaja: {{ partido.ventaja ? "Sí" : "No" }}</p>
+        <p>Super Tiebreak: {{ partido.es_supertiebreak ? "Sí" : "No" }}</p>
+        <p>Set largo: {{ partido.set_largo ? "Sí" : "No" }}</p>
+      </div>
+  </div>
+</div>

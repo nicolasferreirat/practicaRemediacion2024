@@ -1,0 +1,39 @@
+<main>
+  <div class="marcador">
+    <table>
+      <tr>
+          <td [ngStyle]="{'font-size': '1.5em'}" id="descripcion" colspan="2">{{marcadorData?.descripcion_competencia}}</td>
+          <th [ngStyle]="{'font-size': '1.5em'}" class="sets">1°</th>
+          <th [ngStyle]="{'font-size': '1.5em'}" class="sets">2°</th>
+          <th [ngStyle]="{'font-size': '1.5em'}" class="sets">3°</th>
+          <th class="game"></th>
+      </tr>
+      <tr>
+          <td [ngStyle]="{'font-size': '2em'}" class="jugadoresA">{{ marcadorData?.nombre_pareja_A1 }} <br> {{ marcadorData?.nombre_pareja_A2 }}</td>
+          <td class="saque">{{marcadorData?.saquea}}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesA1" >{{ marcadorData?.set1A }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesA2" >{{ marcadorData?.set2A }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesA3" >{{ marcadorData?.set3A }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="puntosA">{{ marcadorData?.puntosA }}</td>
+      </tr>
+      <tr>
+          <td [ngStyle]="{'font-size': '2em'}" class="jugadoresB">{{ marcadorData?.nombre_pareja_B1 }} <br> {{ marcadorData?.nombre_pareja_B2 }}</td>
+          <td class="saque">{{marcadorData?.saqueb}}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesB1">{{ marcadorData?.set1B }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesB2">{{ marcadorData?.set2B }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="games gamesB3">{{ marcadorData?.set3B }}</td>
+          <td [ngStyle]="{'font-size': '2em'}" class="puntosB">{{ marcadorData?.puntosB }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="marcadorData?.minutos !== 0" class="contador">
+    <h2>Tiempo de juego</h2>
+    <p>
+      <span>{{ marcadorData?.horas | number: '2.0' }}</span> :
+      <span>{{ marcadorData?.minutos | number: '2.0' }}</span>
+    </p>
+  </div>
+  <div *ngIf="marcador_finalizado">
+    <h2>El partido ha finalizado.</h2>
+  </div>
+</main>

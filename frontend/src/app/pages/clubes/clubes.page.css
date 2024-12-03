@@ -1,0 +1,216 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.clubes-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.club-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.club-card h2 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.club-card p {
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+.logo img,
+.foto img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.foto {
+  margin-top: 10px;
+}
+
+@media (min-width: 600px) {
+  .club-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .club-card h2 {
+    font-size: 1.75em;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .clubes-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .club-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .text-content h2 {
+    color: #2c3e50;
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .text-content .extra-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 8px;
+  }
+  
+  .extra-info p {
+    margin: 5px 0;
+  }
+  
+  .contacto-icon {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 1em;
+  }
+  
+  .contacto-icon::before {
+    content: '📞';
+    margin-right: 5px;
+  }
+  
+  .foto {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  
+  .foto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 600px) {
+    .club-card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .logo, .foto {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  
+    .text-content {
+      text-align: center;
+      margin: 0;
+    }
+  }
+  
+  .logo img,
+  .foto img {
+    width: 120px;
+    height: auto;
+  }
+
+  .menu-button-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .menu-button {
+    background-color: #00897b;
+    display: inline-flex;  
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; 
+    color: white;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 1.1em; 
+    border-radius: 5px; 
+    text-decoration: none; 
+  }
+  
+  .menu-button:hover {
+    background-color: white;
+    color: #00897b;
+  }
+  
+
+}

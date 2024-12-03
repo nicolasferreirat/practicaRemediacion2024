@@ -1,0 +1,110 @@
+/* Reset básico para evitar márgenes/paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Fondo principal */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Altura mínima para el body */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    position: sticky; /* Header pegajoso, siempre visible en la parte superior */
+    top: 0;
+    width: 100%;
+    background-color: #00695c;
+    padding: 20px;
+    color: white;
+    z-index: 1000;
+    text-align: center;
+}
+
+main {
+    flex: 1; /* Hace que el contenido ocupe el espacio disponible entre el header y footer */
+    padding: 20px;
+    margin-top: 60px; /* Espacio para evitar solapamiento con el header */
+    background-color: #e0f7fa;
+}
+
+footer {
+    position: fixed; /* Footer fijo en la parte inferior */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Ajuste para que el contenido no se superponga al footer */
+.container {
+    margin-bottom: 60px; /* Asegura que el contenido no tape el footer */
+    margin: 0 auto; /* Centrará el container horizontalmente */
+    max-width: 800px; /* Limita el ancho del container */
+    padding: 20px;
+}
+
+/* Estilos para el contenedor de los datos */
+#datos-usuario {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #00695c;
+    color: white;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #00695c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Black Ops One', sans-serif;
+}
+
+.botones {
+    text-align: center;
+}
+button:hover {
+    background-color: #004d40;
+}
+
+/* Otros ajustes */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}

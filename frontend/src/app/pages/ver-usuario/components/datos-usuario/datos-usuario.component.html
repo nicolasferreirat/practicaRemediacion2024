@@ -1,0 +1,39 @@
+<main>
+    <div class="container">
+        <h1>Datos del Usuario</h1>
+        <br>
+        <table id="listaUsuarios">
+            <thead>
+                <tr>
+                    <th class="idcol">Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Nombre de usuario</th>
+                    <th>Email</th>
+                    <th>Foto de perfil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{datosUsuario.id}}</td>
+                <td>{{datosUsuario.nombre}}</td>
+                <td>{{datosUsuario.apellido}}</td>
+                <td>{{datosUsuario.usuario}}</td>
+                <td>{{datosUsuario.mail}}</td>
+                <td><img width="100px" [src]="prevImagen" class="user-image" /></td>
+            </tbody>
+        </table>    
+        <br>
+        <div class="botones">
+            <p class="errorBoton" id="errorBotonEliminar"></p>
+            <button id="editarUsuario" class="button" [routerLink]="['/editarUsuario/', this.userId]">Editar Usuario</button>
+            <button id="editarPassword" class="button" [routerLink]="['/editarPassword/', this.userId]">Editar Contraseña</button>
+            <!--<button id="eliminarUsuario" class="button" [routerLink]="['/eliminarUsuario/', this.userId]">Eliminar Usuario</button>-->
+        </div>
+        <div>
+            <button id="volver" class="button" [routerLink]="['/menuPrincipal']">Volver al Menú</button>
+        </div>
+        <div>
+            <button id="cerrar" class="button" (click)="logout()">Cerrar sesión</button>
+        </div>
+    </div>
+</main>

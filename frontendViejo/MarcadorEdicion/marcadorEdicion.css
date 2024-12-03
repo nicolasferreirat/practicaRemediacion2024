@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 131px); 
+    background-color: #d0e9e3; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.navMedio {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navMedio ul {
+    display: flex;
+}
+
+.navDer {
+    margin-left: auto;
+}
+
+.navDer ul {
+    display: flex;
+}
+
+.edicion {
+    display: flex;
+}
+
+.formulario {
+    margin: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.marcador {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.marcador td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #00897b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f5a;
+}

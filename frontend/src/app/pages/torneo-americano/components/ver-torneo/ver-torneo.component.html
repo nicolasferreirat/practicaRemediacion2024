@@ -1,0 +1,59 @@
+<main>
+  <app-editar-torneo *ngIf="!editarTorneoVisible"></app-editar-torneo>
+  <div *ngIf="editarTorneoVisible">
+    <div *ngIf="!finalizado">
+      <h2>Torneo: {{ torneoData.descripcion_torneo }}</h2>
+      <h3>Ronda {{ rondaActual + 1 }}</h3>
+
+      <div *ngFor="let partido of rondas[rondaActual]; let i = index">
+        <h4>
+          Partido {{ i + 1 }}: {{ obtenerNombresPareja(partido.pareja1) }} vs
+          {{ obtenerNombresPareja(partido.pareja2) }}
+        </h4>
+
+        <div>
+          <label>Puntos de {{ obtenerNombresPareja(partido.pareja1) }}:</label>
+          <input
+            type="number"
+            [(ngModel)]="puntos[rondaActual][i].pareja1Pts"
+          />
+        </div>
+
+        <div>
+          <label>Puntos de {{ obtenerNombresPareja(partido.pareja2) }}:</label>
+          <input
+            type="number"
+            [(ngModel)]="puntos[rondaActual][i].pareja2Pts"
+          />
+        </div>
+      </div>
+
+      <p>{{ this.errorMensaje }}</p>
+
+      <button
+        (click)="actualizarPuntos(rondaActual)"
+        *ngIf="rondaActual < rondas.length - 1"
+      >
+        Siguiente Ronda
+      </button>
+
+      <div
+        (click)="actualizarPuntos(rondaActual)"
+        *ngIf="rondaActual === rondas.length - 1"
+      >
+        <button>Finalizar</button>
+      </div>
+    </div>
+    <div *ngIf="finalizado">
+      <h3>Ranking Final</h3>
+      <ul>
+        <li *ngFor="let jugador of rankingFinal">
+          {{ jugador.jugador }} - Total: {{ jugador.puntosTotales }} puntos
+        </li>
+      </ul>
+
+      <!-- Botón para finalizar el torneo -->
+      <button (click)="finalizarTorneo()">Finalizar Torneo</button>
+    </div>
+  </div>
+</main>

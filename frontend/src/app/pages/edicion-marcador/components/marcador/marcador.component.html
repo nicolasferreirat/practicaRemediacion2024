@@ -1,0 +1,106 @@
+<main>
+    <app-marcador-edicion *ngIf="!marcadorVisible"></app-marcador-edicion>
+    <div *ngIf="marcadorVisible" class="marcador">
+        <table>
+            <tr>
+                <td id="descripcion" colspan="2"><input 
+                    type="text" 
+                    class="editable-field descripcion" 
+                    [(ngModel)]="marcadorData.descripcion_competencia"
+                    placeholder="Descripción de la competencia"
+                /></td>
+                <th class="sets">1°</th>
+                <th class="sets">2°</th>
+                <th class="sets">3°</th>
+                <th class="game"></th>
+                <th class="botonIniciar">
+                    <div *ngIf="marcadorData?.marcador_iniciado"><button class="botonmarcador" (click)="iniciarJuego()">Iniciar Juego</button></div>
+                </th>
+            </tr>
+            <tr>
+                <td [ngStyle]="{'font-size': '2em'}" class="jugadoresA"><input 
+                    type="text" 
+                    class="editable-field" 
+                    [(ngModel)]="marcadorData.nombre_pareja_A1"
+                    placeholder="Jugador A1"
+                />
+                <br>
+                <input 
+                    type="text" 
+                    class="editable-field" 
+                    [(ngModel)]="marcadorData.nombre_pareja_A2"
+                    placeholder="Jugador A2"
+                /></td>
+                <td class="saque">{{marcadorData?.saquea}}</td>
+                <td [ngStyle]="{'font-size': '2em'}"  class="games gamesA1" [ngClass]="{'bold': marcadorData.set1 === true}">{{ marcadorData?.set1A }}</td>
+                <td [ngStyle]="{'font-size': '2em'}"  class="games gamesA2" [ngClass]="{'bold': marcadorData.set1 === false && marcadorData.set2 === true}">{{ marcadorData?.set2A }}</td>
+                <td [ngStyle]="{'font-size': '2em'}"  class="games gamesA3" [ngClass]="{'bold': marcadorData.set1 === false && marcadorData.set2 === false}">{{ marcadorData?.set3A }}</td>
+                <td [ngStyle]="{'font-size': '2em'}"  class="puntosA">{{ marcadorData?.puntosA }}</td>
+                <td><button class="botonmarcador" (click)="sumarPuntoA()">+ Punto </button><button class="botonmarcador" (click)="restarPuntoA()">- Punto </button></td>
+            </tr>
+            <tr>
+                <td [ngStyle]="{'font-size': '2em'}" class="jugadoresB"><input 
+                    type="text" 
+                    class="editable-field" 
+                    [(ngModel)]="marcadorData.nombre_pareja_B1"
+                    placeholder="Jugador B1"
+                />
+                <br>
+                <input 
+                    type="text" 
+                    class="editable-field" 
+                    [(ngModel)]="marcadorData.nombre_pareja_B2"
+                    placeholder="Jugador B2"
+                /></td>
+                <td class="saque">{{marcadorData?.saqueb}}</td>
+                <td [ngStyle]="{'font-size': '2em'}" class="games gamesB1" [ngClass]="{'bold': marcadorData.set1 === true}">{{ marcadorData?.set1B }}</td>
+                <td [ngStyle]="{'font-size': '2em'}" class="games gamesB2" [ngClass]="{'bold': marcadorData.set1 === false && marcadorData.set2 === true}">{{ marcadorData?.set2B }}</td>
+                <td [ngStyle]="{'font-size': '2em'}" class="games gamesB3" [ngClass]="{'bold': marcadorData.set1 === false && marcadorData.set2 === false}">{{ marcadorData?.set3B }}</td>
+                <td [ngStyle]="{'font-size': '2em'}" class="puntosB">{{ marcadorData?.puntosB }}</td>
+                <td><button class="botonmarcador" (click)="sumarPuntoB()">+ Punto </button><button class="botonmarcador" (click)="restarPuntoB()">- Punto </button></td>
+            </tr>
+        </table>
+        <div class="botonesMarcador">
+            <div class="botonesJuego">
+                <button class="botonmarcador" (click)="alternarSaque()">Alternar Saque</button>
+                <button class="botonmarcador" (click)="restarGameA()">Restar Game A</button>
+                <button class="botonmarcador" (click)="restarGameB()">Restar Game B</button>
+            </div>
+            <button *ngIf="marcadorData.botonInicioVisible" (click)="iniciarNuevoMarcador()" class="boton-nuevomarcador">Iniciar Nuevo Marcador</button>
+        </div>
+    </div>
+    <div *ngIf="marcadorVisible" class="botones">
+        <div class="contador">
+            <h2>Tiempo de juego</h2>
+            <p>
+              <span>{{ marcadorData?.horas | number: '2.0' }}</span>  :
+              <span>{{ marcadorData?.minutos | number: '2.0' }}</span> :
+              <span>{{ marcadorData?.segundos | number: '2.0' }}</span>
+            </p>
+        </div>
+        <div class="pines">
+            <div class="pincomp">
+                <h5 [ngStyle]="{'font-size': '2em'}" >PIN para Compartir</h5>
+                <input [ngStyle]="{'font-size': '2em'}"id="pinCompartir" readonly value="{{marcadorData?.pin_compartir}}">
+                <div class="compartir">
+                    <button (click)="copiarAlPortapapeles('compartir')">Copiar</button>
+                    <button (click)="compartirPorWhatsApp('compartir')">Compartir por WhatsApp</button>
+                    <button (click)="compartirPorMail('compartir')">Compartir por Correo</button>
+                </div>
+            </div>
+            <br>
+            <div class="pinedi">
+                <h5 [ngStyle]="{'font-size': '2em'}" >PIN para Editar</h5>
+                <input [ngStyle]="{'font-size': '2em'}" id="pinEditar" readonly value="{{marcadorData?.pin_editar}}">
+                <div class="compartir">
+                    <button (click)="copiarAlPortapapeles('editar')">Copiar</button>
+                    <button (click)="compartirPorWhatsApp('editar')">Compartir por WhatsApp</button>
+                    <button (click)="compartirPorMail('editar')">Compartir por Correo</button>
+                </div>
+            </div>
+        </div>
+        <button class="finalizar" (click)="reiniciarMarcador()">Reiniciar Marcador</button>
+        <button class="finalizar" (click)="finalizarMarcador()">Finalizar Marcador</button>
+    </div>
+    
+</main>

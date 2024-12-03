@@ -1,0 +1,130 @@
+main,
+.filtros,
+.paginacion {
+  background-color: #d0e9e3;
+}
+
+main {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  background-color: #d0e9e3;
+  border-radius: 10px;
+  max-width: 80vh;
+  margin: auto;
+}
+
+h2 {
+  font-family: "Black Ops One", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004d40;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filtros input[type="text"],
+.filtros input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filtros input[type="text"]:focus,
+.filtros input[type="date"]:focus {
+  border-color: #007bff;
+}
+
+.filtros button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filtros button:hover {
+  background-color: #0056b3;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginacion button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.paginacion button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginacion button:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.paginacion span {
+  font-weight: bold;
+}
+
+#noPart {
+  height: 90vh;
+}
+
+#noPartidos {
+  text-align: center;
+  color: #ff0000;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/*Contenedor de los botones de historial */
+.botones-historial {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.botones-historial button {
+  background-color: #ffd700;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.botones-historial button:hover {
+  background-color: #ffcc00;
+}
+
+.botones-historial button.active {
+  background-color: #ffcc00;
+}
+
+.botones-historial button.inactivo {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}

@@ -1,0 +1,7 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 131px); 
+    background-color: #d0e9e3; 
+}

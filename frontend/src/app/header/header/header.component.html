@@ -1,0 +1,27 @@
+<header class="main-container">
+    <div id="logo-container">
+      <a [routerLink]="logueado() ? ['/menuPrincipal'] : ['/']">
+        <img src="/logopalabra_b.png" alt="Logo SetPoint" id="logo" />
+      </a>
+    </div>
+
+    <button *ngIf="!logueado()" [routerLink]="['/sobreNosotros']">
+      Sobre Nosotros
+    </button>
+
+    <ng-container *ngIf="logueado()">
+      <div *ngIf="logueado()" class="botones">
+        <button [routerLink]="['/historial']">Historial</button>
+        <button [routerLink]="['/sobreNosotros']">Sobre nosotros</button>
+        <button [routerLink]="['/informacion']">Información</button>
+        <button [routerLink]="['/clubes']">Clubes</button>
+      </div>  
+      
+      <div class="user-info" *ngIf="userName">
+        <button *ngIf="logueado()" [routerLink]="['/verUsuario']">
+          <span id="usuario"><img width="32px" [src]="userImage()" class="user-image" />  {{ userName() }}
+          </span>
+        </button>
+      </div>
+    </ng-container>
+  </header> 
